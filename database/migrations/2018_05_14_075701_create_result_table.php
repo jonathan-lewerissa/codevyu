@@ -16,7 +16,7 @@ class CreateResultTable extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
             $table->text('comment');
-            $table->string('source_code_path');
+            $table->string('source_code');
             $table->timestamps();
         });
     }
