@@ -48,14 +48,11 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
-<<<<<<< HEAD
-=======
         ],
         "post-update-cmd": [
             "mkdir -p public/assets",
             "ln -sf ../../vendor/wangaz/laravel-semantic-ui-css/src/assets/jquery public/assets/jquery",
             "ln -sf ../../vendor/wangaz/laravel-semantic-ui-css/src/assets/semantic-ui public/assets/semantic-ui"
->>>>>>> b3668d44a8884a267b8152df264e57d0a4d3a02c
         ]
     },
     "config": {
