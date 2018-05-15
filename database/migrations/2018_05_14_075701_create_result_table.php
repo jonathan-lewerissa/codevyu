@@ -13,10 +13,11 @@ class CreateResultTable extends Migration
      */
     public function up()
     {
-        Schema::create('result', function (Blueprint $table) {
+        Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('commentpath');
-            $table->string('scpath');
+            $table->text('comment');
+            $table->string('source_code_path');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateResultTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('result');
+        Schema::dropIfExists('results');
     }
 }

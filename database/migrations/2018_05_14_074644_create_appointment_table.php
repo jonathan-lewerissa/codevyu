@@ -13,11 +13,13 @@ class CreateAppointmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('appointment', function (Blueprint $table) {
+        Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
-            $table->timestamp('time');
+            $table->integer('user_id')->unsigned();
             $table->string('link');
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateAppointmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appointment');
+        Schema::dropIfExists('appointments');
     }
 }
