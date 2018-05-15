@@ -1,8 +1,8 @@
 <?php
 
-namespace Codevyu\Providers;
+namespace App\Providers;
 
-use Codevyu\Services\AppointmentService;
+use App\Services\AppointmentService;
 use Illuminate\Support\ServiceProvider;
 
 class ModelServiceServiceProvider extends ServiceProvider
@@ -25,7 +25,7 @@ class ModelServiceServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('AppointmentService',function ($app){
-            return new AppointmentService($app->make('Codevyu\Repository\AppointmentInterface'));
+            return new AppointmentService($app->make('App\Repository\AppointmentInterface'));
         });
     }
 }

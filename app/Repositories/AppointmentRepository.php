@@ -6,9 +6,9 @@
  * Time: 5:29 PM
  */
 
-namespace Codevyu\Repositories;
+namespace App\Repositories;
 
-use Codevyu\Appointment;
+use App\Appointment;
 
 class AppointmentRepository implements \AppointmentInterface
 {

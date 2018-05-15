@@ -6,7 +6,7 @@
  * Time: 5:37 PM
  */
 
-namespace Codevyu\Services;
+namespace App\Services;
 
 
 class AppointmentService

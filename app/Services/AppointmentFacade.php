@@ -6,7 +6,7 @@
  * Time: 5:51 PM
  */
 
-namespace Codevyu\Services;
+namespace App\Services;
 
 use Illuminate\Support\Facades\Facade;
 

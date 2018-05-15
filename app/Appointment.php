@@ -1,6 +1,6 @@
 <?php
 
-namespace Codevyu;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 8

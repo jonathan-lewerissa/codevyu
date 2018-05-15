@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Codevyu\User::class,
+            'model' => App\User::class,
         ],
 
         // 'users' => [
