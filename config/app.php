@@ -176,6 +176,8 @@ return [
         // Codevyu\Providers\BroadcastServiceProvider::class,
         Codevyu\Providers\EventServiceProvider::class,
         Codevyu\Providers\RouteServiceProvider::class,
+        Codevyu\Providers\ModelRepositoryServiceProvider::class,
+        Codevyu\Providers\ModelServiceServiceProvider::class
 
     ],
 
@@ -225,6 +227,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Appointment' => Codevyu\Services\AppointmentFacade::class
 
     ],
 
