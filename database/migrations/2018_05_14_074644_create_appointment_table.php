@@ -16,10 +16,12 @@ class CreateAppointmentTable extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
+            $table->integer('company_id')->unsigned();
             $table->string('link');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('company_id')->references('id')->on('users');
         });
     }
 
