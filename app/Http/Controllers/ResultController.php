@@ -15,6 +15,8 @@ class ResultController extends Controller
     public function index()
     {
         //
+        $result = Result::all();
+        return view('admin.result.index', compact('result'));
     }
 
     /**
@@ -25,6 +27,7 @@ class ResultController extends Controller
     public function create()
     {
         //
+        return view('admin.result.create');
     }
 
     /**
@@ -35,7 +38,7 @@ class ResultController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -44,9 +47,11 @@ class ResultController extends Controller
      * @param  \App\Result  $result
      * @return \Illuminate\Http\Response
      */
-    public function show(Result $result)
+    public function show($id)
     {
-        //
+        //PAKEK ROOM ID INIYA IDNYA
+        $result = Result::where('id', $id)->first();
+        return view('admin.result.show', compact('result'));
     }
 
     /**
@@ -78,8 +83,10 @@ class ResultController extends Controller
      * @param  \App\Result  $result
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Result $result)
+    public function destroy($id)
     {
         //
+        Result::where('id', $id)->delete();
+        return back();
     }
 }
