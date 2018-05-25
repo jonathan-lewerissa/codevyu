@@ -14,4 +14,9 @@ class Interview extends Model
     {
         return $this->belongsTo('App\Appointment');
     }
+
+    public function result()
+    {
+        return $this->hasOne('App\Result');
+    }
 }

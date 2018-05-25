@@ -15,6 +15,7 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('interview_id');
             $table->text('comment');
             $table->string('source_code');
             $table->timestamps();
