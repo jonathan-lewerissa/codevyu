@@ -17,11 +17,9 @@ class CreateAppointmentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('company_id')->unsigned();
-            $table->string('link');
+            $table->integer('interview_id')->unsigned()->nullable();
+            $table->dateTimeTz('schedule');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('company_id')->references('id')->on('users');
         });
     }
 

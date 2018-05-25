@@ -15,6 +15,8 @@ class CreateInterviewsTable extends Migration
     {
         Schema::create('interviews', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('results_id')->unsigned();
+            $table->string('room_id');
             $table->timestamps();
         });
     }
