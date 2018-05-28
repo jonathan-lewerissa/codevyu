@@ -13,4 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/fonts/nanumbarungothic.css" />
 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
+<script src="{{ asset('js/semantic.min.js') }}"></script>
+
 <script type="text/javascript" src="/assets/semantic-ui/semantic.min.js"></script>

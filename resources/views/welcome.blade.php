@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    	<div class="ui inverted vertical masthead center aligned segment">
 
     <div class="ui container inverted vertical masthead center aligned segment ">
       <div class="ui large secondary inverted pointing menu full height">
@@ -14,8 +13,8 @@
         </a>
         
         <div class="right item">
-          <a class="ui inverted button" href="{{ route('login') }}">Log in</a>
-          <a class="ui inverted button" href="{{ route('register') }}">Sign Up</a>
+          <a class="ui button" href="{{ route('login') }}">Log in</a>
+          <a class="ui button" href="{{ route('register') }}">Sign Up</a>
         </div>
       </div>
       <div class="ui text container">
