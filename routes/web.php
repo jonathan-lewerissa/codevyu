@@ -35,3 +35,9 @@ Route::get('/appoint', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/send', function (){
+   $email = "veaca13@gmail.com";
+   \Illuminate\Support\Facades\Mail::to($email)->send(new \App\Mail\AppointmentMail());
+   return view('home');
+});
