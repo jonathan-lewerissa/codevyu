@@ -17,6 +17,12 @@
 <input id="txt-roomid" placeholder="Unique Room ID">
 
 <button id="join-room">Join Room</button>
+<input type="text" id="input-text-chat" placeholder="Enter Text Chat" >
+<div id="chat-container">
+
+                <div id="file-container"></div>
+                <div class="chat-output"></div>
+</div>
 <script>
 	var connection = new RTCMultiConnection();
 
@@ -25,7 +31,7 @@
 	connection.session ={
 		audio: true,
 		video: true,
-		data: true;
+		data: true
 	};
 	connection.sdpConstraints.mandatory = {
 		OfferToReceiveAudio : true,
@@ -41,7 +47,7 @@
 		connection.openOrJoin(roomid.value || 'predefined-roomid');
 	};
 connection.onopen = function(event) {
-    connection.send('hello everyone');
+    connection.send('Welcome to Interview Session');
 };
 
 connection.onmessage = function(event) {
@@ -49,6 +55,24 @@ connection.onmessage = function(event) {
 };
 
 
+document.getElementById('input-text-chat').onkeyup = function(e) {
+    if (e.keyCode != 13) return;
+    // removing trailing/leading whitespace
+    this.value = this.value.replace(/^\s+|\s+$/g, '');
+    if (!this.value.length) return;
+    connection.send(this.value);
+    appendDIV(this.value);
+    this.value = '';
+};
+var chatContainer = document.querySelector('.chat-output');
+function appendDIV(event) {
+    var div = document.createElement('div');
+    div.innerHTML = event.data || event;
+    chatContainer.insertBefore(div, chatContainer.firstChild);
+    div.tabIndex = 0;
+    div.focus();
+    document.getElementById('input-text-chat').focus();
+}
 </script>
 </body>
 </html>
