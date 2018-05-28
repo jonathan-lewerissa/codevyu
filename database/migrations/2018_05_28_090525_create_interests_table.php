@@ -17,8 +17,8 @@ class CreateInterestsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('file_path');
-            $table->unsignedInteger('user_id');
+            $table->string('file_path')->nullable();
+            $table->unsignedInteger('company_id');
             $table->timestamps();
         });
     }
