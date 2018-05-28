@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('interview');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
