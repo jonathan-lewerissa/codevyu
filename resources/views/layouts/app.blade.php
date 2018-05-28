@@ -12,9 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
-    <script type="text/javascript" src="assets/semantic-ui/semantic.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/semantic-ui/semantic.min.css">
+
+    <script type="text/javascript" src="{{ asset('assets/semantic-ui/semantic.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/semantic-ui/semantic.min.css') }}">
 </head>
 <body>
     <div id="app">

@@ -32,8 +32,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Appointment');
     }
 
-    public function interest()
+    public function opening()
     {
-        return $this->hasMany('App\Interest','company_id');
+        return $this->hasMany('App\Opening');
     }
 }

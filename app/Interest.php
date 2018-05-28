@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Interest extends Model
 {
     protected $fillable = [
-        'name','email','file_path','company_id'
+        'name','email','file_path','opening_id'
     ];
 
-    public function company()
+    public function opening()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Opening');
     }
 
 }

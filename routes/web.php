@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,10 +33,11 @@ Route::get('/appoint', function(){
 	return view('appoint');
 });
 
-Route::resource('/interview','InterestController');
+Route::get('/opening','OpeningController@index');
 
+Route::get('/opening/{id}','OpeningController@show');
 
-Auth::routes();
+Route::resource('/get-started','InterestController')->only(['create']);
 
 Route::get('/home', 'HomeController@index')->name('home');
 

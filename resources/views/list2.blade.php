@@ -10,13 +10,11 @@
                     </div>
                     @if($all->count())
                     <div class="ui segments">
-                        @foreach($all as $opening)
+                        @foreach($all as $interest)
                         <div class="ui segment">
-                            <h3 class="ui header">{{ $opening->title }}</h3>
-                            <p>{{ $opening->description }}</p>
-                            <form action="/opening/{{ $opening->id }}">
-                                <button class="ui positive button" type="submit">View details</button>
-                            </form>
+                            <h3 class="ui header">{{ $interest->name }}</h3>
+                            <p>{{ $interest->email }}</p>
+
                         </div>
                         @endforeach
                     </div>
