@@ -23,5 +23,9 @@ Route::get('/interview', function(){
 	return view('interview');
 });
 
+Route::get('/appoint', function(){
+	return view('appoint');
+});
+
 Auth::routes();
 

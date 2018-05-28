@@ -18,7 +18,10 @@
                 </div>
             </div>
             <button class="ui secondary button" onclick="location.href='interview'">
-              Go to Interview
+                Go to Interview
+            </button>
+            <button class="ui button" onclick="location.href='appoint'">
+                Make an Appointment
             </button>
         </div>
     </div>
