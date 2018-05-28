@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\interest;
+use App\Interest;
 use Illuminate\Http\Request;
 
 class InterestController extends Controller
@@ -14,7 +14,8 @@ class InterestController extends Controller
      */
     public function index()
     {
-        //
+        $all = Interest::orderBy('created_at','asc')->paginate(10);
+        return view('list',compact('all'));
     }
 
     /**
@@ -44,7 +45,7 @@ class InterestController extends Controller
      * @param  \App\interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function show(interest $interest)
+    public function show(Interest $interest)
     {
         //
     }
@@ -55,7 +56,7 @@ class InterestController extends Controller
      * @param  \App\interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function edit(interest $interest)
+    public function edit(Interest $interest)
     {
         //
     }
@@ -67,7 +68,7 @@ class InterestController extends Controller
      * @param  \App\interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, interest $interest)
+    public function update(Request $request, Interest $interest)
     {
         //
     }
@@ -78,7 +79,7 @@ class InterestController extends Controller
      * @param  \App\interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function destroy(interest $interest)
+    public function destroy(Interest $interest)
     {
         //
     }

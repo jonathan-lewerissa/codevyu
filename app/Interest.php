@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class interest extends Model
+class Interest extends Model
 {
     protected $fillable = [
         'name','email','file_path','company_id'
@@ -12,7 +12,7 @@ class interest extends Model
 
     public function company()
     {
-        return $this->belongsTo('App\User','company_id');
+        return $this->belongsTo('App\User');
     }
 
 }

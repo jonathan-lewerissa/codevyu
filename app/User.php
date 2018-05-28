@@ -34,6 +34,6 @@ class User extends Authenticatable
 
     public function interest()
     {
-        return $this->hasMany('App\Interest');
+        return $this->hasMany('App\Interest','company_id');
     }
 }
