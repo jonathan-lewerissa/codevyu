@@ -17,6 +17,9 @@
                     You are logged in!
                 </div>
             </div>
+            <button class="ui secondary button" onclick="location.href='interview'">
+              Go to Interview
+            </button>
         </div>
     </div>
 </div>

@@ -24,7 +24,8 @@
 
 	connection.session ={
 		audio: true,
-		video: true
+		video: true,
+		data: true;
 	};
 	connection.sdpConstraints.mandatory = {
 		OfferToReceiveAudio : true,
@@ -39,6 +40,15 @@
 		this.disabled = true;
 		connection.openOrJoin(roomid.value || 'predefined-roomid');
 	};
+connection.onopen = function(event) {
+    connection.send('hello everyone');
+};
+
+connection.onmessage = function(event) {
+    alert(event.userid + ' said: ' + event.data);
+};
+
+
 </script>
 </body>
 </html>
