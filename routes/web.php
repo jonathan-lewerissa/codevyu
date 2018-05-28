@@ -31,6 +31,8 @@ Route::get('/appoint', function(){
 	return view('appoint');
 });
 
+Route::resource('/interview','InterestController');
+
 
 Auth::routes();
 

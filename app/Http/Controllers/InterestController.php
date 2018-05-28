@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Interest;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InterestController extends Controller
 {
@@ -14,7 +16,9 @@ class InterestController extends Controller
      */
     public function index()
     {
-        $all = Interest::orderBy('created_at','asc')->paginate(10);
+//        $all = Interest::orderBy('created_at','asc')->paginate(10);
+        $user_id = Auth::user()->id;
+        $all = User::find($user_id)->interest;
         return view('list',compact('all'));
     }
 
