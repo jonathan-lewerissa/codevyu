@@ -15,6 +15,7 @@
                             <h3 class="ui header">{{ $opening->title }}</h3>
                             <p>{{ $opening->description }}</p>
                             <form action="{{ route('opening.show',['id'=>$opening->id]) }}">
+                                {{ csrf_field() }}
                                 <button class="ui positive button" type="submit">Who is interested?</button>
                             </form>
                             <form action="{{ route('opening.destroy',['id'=>$opening->id]) }}" method="post">
