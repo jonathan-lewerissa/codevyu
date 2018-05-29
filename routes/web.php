@@ -36,6 +36,8 @@ Route::resource('/opening','OpeningController',
         'parameters' => ['user' => 'id']
     ]);
 
+Route::resource('appointment','AppointmentController');
+
 Route::resource('/get-started','InterestController')->only(['create','store']);
 
 Route::get('/send', function (){

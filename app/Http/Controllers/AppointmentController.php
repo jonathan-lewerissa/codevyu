@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Appointment;
+use App\Interest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -37,11 +39,21 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            [
+//        $request->validate(
+//            [
+//
+//            ]
+//        );
 
-            ]
-        );
+        $store = new Appointment();
+        $interest_id = $request->interest_id;
+        $store->interest_id = $interest_id;
+        $store->opening_id = Interest::find($interest_id)->opening->id;
+        $store->user_id = Interest::find($interest_id)->opening->user->id;
+
+        $store->schedule = Carbon::parse($request->date.' '.$request->time);
+        $store->save();
+        return back();
     }
 
     /**

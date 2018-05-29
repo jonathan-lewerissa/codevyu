@@ -24,7 +24,24 @@
             <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
         </div>
     </div>
-
+    <form class="ui form">
+        <div class="field">
+            <label>Full name</label>
+            <input type="text" placeholder="Your name" name="name">
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input type="email" placeholder="Your email" name="email">
+            @if ($errors->has('email'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+        </div>
+        <div class="field">
+            <label>Job opening</label>
+        </div>
+    </form>
 
 @endsection
  

@@ -29,7 +29,7 @@ class InterestController extends Controller
      */
     public function create()
     {
-        //
+        return view('register_interest');
     }
 
     /**

@@ -34,6 +34,7 @@ class User extends Authenticatable
 
     public function appointment()
     {
+//        return Appointment::where('user_id',$this->id)->get();
         return $this->hasMany('App\Appointment');
     }
 }

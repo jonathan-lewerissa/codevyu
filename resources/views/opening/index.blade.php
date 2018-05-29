@@ -6,7 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="ui segments">
                     <div class="ui segment">
-                        <h2 class="ui header">List of interests</h2>
+                        <h2 class="ui header">List of my openings</h2>
                     </div>
                     @if($all->count())
                     <div class="ui segments">

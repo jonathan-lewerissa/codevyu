@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Opening;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class OpeningController extends Controller
+class PublicOpening extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class OpeningController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::user()->id;
-        $all = User::find($user_id)->opening;
-        return view('opening.index',compact('all'));
+        return Opening::all();
     }
 
     /**
@@ -28,7 +24,7 @@ class OpeningController extends Controller
      */
     public function create()
     {
-        return view('opening.create');
+        //
     }
 
     /**
@@ -39,9 +35,7 @@ class OpeningController extends Controller
      */
     public function store(Request $request)
     {
-//        $request->user_id = Auth::user()->id;
-        Opening::create($request->all());
-        return redirect()->route('opening.index');
+        //
     }
 
     /**
@@ -52,8 +46,7 @@ class OpeningController extends Controller
      */
     public function show(Opening $opening)
     {
-        $all = Opening::find($opening->id)->interest;
-        return view('opening.show',compact('all','opening'));
+        //
     }
 
     /**
@@ -87,8 +80,6 @@ class OpeningController extends Controller
      */
     public function destroy(Opening $opening)
     {
-        $r = Opening::findorfail($opening->id);
-        $r->delete();
-        return redirect()->route('opening.index');
+        //
     }
 }

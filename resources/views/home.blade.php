@@ -25,11 +25,8 @@
                     <div class="ui segments">
                         @foreach($appointments as $appointment)
                             <div class="ui segment">
-                                <h3 class="ui header">{{ App\Interest::find($appointment->interest_id)->name  }}</h3>
-                                <h3>{{ \App\Opening::find($appointment->opening_id)->title }}</h3>
-                                <form action="{{ route('opening.show',['id'=>$appointment->opening_id]) }}">
-                                    <button class="ui positive button" type="submit">View details</button>
-                                </form>
+                                <h2 class="ui header">{{ $appointment->interest->name  }}</h2>
+                                <p>applied for: {{ $appointment->opening->title }}</p>
                             </div>
                         @endforeach
                     </div>
