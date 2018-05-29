@@ -36,9 +36,9 @@ Route::resource('/opening','OpeningController',
         'parameters' => ['user' => 'id']
     ]);
 
-Route::resource('appointment','AppointmentController');
+Route::resource('/appointment','AppointmentController');
 
-Route::resource('/get-started','InterestController')->only(['create','store']);
+Route::resource('/get-started','InterestController');
 
 Route::get('/send', function (){
    $email = "veaca13@gmail.com";

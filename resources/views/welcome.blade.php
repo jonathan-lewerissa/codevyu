@@ -21,7 +21,7 @@
             <h1 class="ui inverted header">
                 Welcome to Codevyu
             </h1>
-            <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+            <a class="ui huge primary button" href="{{ route('get-started.index') }}">Get Started <i class="right arrow icon"></i></a>
         </div>
     </div>
 

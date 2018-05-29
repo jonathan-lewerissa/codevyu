@@ -28,7 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $current_user = Auth::user()->id;
-        $appointments = Appointment::where('user_id',$current_user)->get();
+        $appointments = Appointment::where([
+            ['user_id','=',$current_user]
+        ])->get();
         return view('home',compact('appointments'));
     }
 }

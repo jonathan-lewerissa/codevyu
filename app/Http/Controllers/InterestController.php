@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Interest;
+use App\Opening;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,10 +17,8 @@ class InterestController extends Controller
      */
     public function index()
     {
-//        $all = Interest::orderBy('created_at','asc')->paginate(10);
-        $user_id = Auth::user()->id;
-        $all = User::find($user_id)->interest;
-        return view('list',compact('all'));
+        $openings = Opening::all();
+        return view('interest.register',compact('openings'));
     }
 
     /**
@@ -29,7 +28,7 @@ class InterestController extends Controller
      */
     public function create()
     {
-        return view('register_interest');
+
     }
 
     /**
@@ -40,7 +39,8 @@ class InterestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Interest::create($request->all());
+        return redirect()->route('get-started.index');
     }
 
     /**

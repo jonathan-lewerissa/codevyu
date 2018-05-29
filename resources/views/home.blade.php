@@ -27,6 +27,7 @@
                             <div class="ui segment">
                                 <h2 class="ui header">{{ $appointment->interest->name  }}</h2>
                                 <p>applied for: {{ $appointment->opening->title }}</p>
+                                <p>Interview on: {{ \Carbon\Carbon::parse($appointment->schedule)->format('l jS \\of F Y h:i:s A') }}</p>
                             </div>
                         @endforeach
                     </div>

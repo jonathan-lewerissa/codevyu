@@ -50,9 +50,10 @@ class AppointmentController extends Controller
         $store->interest_id = $interest_id;
         $store->opening_id = Interest::find($interest_id)->opening->id;
         $store->user_id = Interest::find($interest_id)->opening->user->id;
-
         $store->schedule = Carbon::parse($request->date.' '.$request->time);
         $store->save();
+
+//        Jangan lupa buat kirim email!
         return back();
     }
 
