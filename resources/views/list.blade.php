@@ -25,7 +25,12 @@
                         <p>None so far!</p>
                     </div>
                     @endif
+                    <form action="{{ route('opening.create') }}">
+                        <button class="ui button">Create new opening</button>
+                    </form>
                 </div>
+
+                <br>
                 <button class="ui secondary button" onclick="location.href='interview'">
                     Go to Interview
                 </button>

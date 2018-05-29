@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     protected $fillable = [
-        'user_id','company_id','interview_id','schedule'
+        'opening_id','interest_id','user_id','schedule'
     ];
 
     public function interview()
@@ -15,13 +15,18 @@ class Appointment extends Model
         return $this->hasOne('App\Interview');
     }
 
-    public function user()
+    public function opening()
     {
-        return $this->belongsTo('App\Interest','user_id');
+        return $this->belongsTo('App\Opening');
     }
 
-    public function company()
+    public function interest()
     {
-        return $this->belongsTo('App\User','company_id');
+        return $this->belongsTo('App\Interest');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

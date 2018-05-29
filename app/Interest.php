@@ -15,4 +15,9 @@ class Interest extends Model
         return $this->belongsTo('App\Opening');
     }
 
+    public function appointment()
+    {
+        return $this->hasOne('App\Appointment');
+    }
+
 }

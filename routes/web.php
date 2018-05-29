@@ -21,10 +21,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
-
 Route::get('/interview', function(){
 	return view('interview');
 });
@@ -33,15 +29,14 @@ Route::get('/appoint', function(){
 	return view('appoint');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('/opening','OpeningController',
     [
-        'names' => ['index' => 'opening.index','show'=>'opening.show'],
         'parameters' => ['user' => 'id']
     ]);
 
-Route::resource('/get-started','InterestController')->only(['create']);
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/get-started','InterestController')->only(['create','store']);
 
 Route::get('/send', function (){
    $email = "veaca13@gmail.com";

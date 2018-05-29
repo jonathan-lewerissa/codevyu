@@ -28,7 +28,7 @@ class OpeningController extends Controller
      */
     public function create()
     {
-        //
+        return view('create_opening');
     }
 
     /**
@@ -39,7 +39,9 @@ class OpeningController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        $request->user_id = Auth::user()->id;
+        Opening::create($request->all());
+        return redirect()->route('opening.index');
     }
 
     /**
