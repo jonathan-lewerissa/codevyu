@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="ui container inverted vertical masthead center aligned segment ">
+    <div class="ui container inverted vertical masthead center aligned segment " style="height: 100vh; width: 100vw;">
         <div class="ui large secondary inverted pointing menu full height">
             <a class="toc item">
                 <i class="sidebar icon"></i>

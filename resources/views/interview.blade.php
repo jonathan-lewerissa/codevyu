@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 	@section('title')
-
+	Interview Session
 	@endsection
 	@section('script')
 	<script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
@@ -31,8 +31,14 @@
 </div>
 <div class="ui centered" style="text-align: center;">
 	<div class="ui input focus" >
-	  	 <input  id="input-text-chat" placeholder="Enter Text Chat" type="text">
+	  	 <input  id="input-text-chat" placeholder="Enter Text Chat" type="text" disabled="true">
 	</div>
+</div>
+<div class="ui centered" style="text-align: center;">
+	<button class="ui right labeled icon button" id="next" disabled="true" onclick="myFunction()">
+	  <i class="right arrow icon"> </i>
+	  Next Session
+	</button>
 </div>
 
 
@@ -87,6 +93,8 @@
 		document.getElementById('head').innerHTML ="Semoga Berhasil";
 		document.getElementById('paragrap').innerHTML = "Setelah anda selesai interview, dimohon untuk mengirimkan file yang telah dibuat ke email perusahaan";
 		document.getElementById('paragrap2').innerHTML ="";
+		document.getElementById('input-text-chat').disabled = false;
+		document.getElementById('next').disabled = false;
 	};
 connection.onopen = function(event) {
     connection.send('Welcome to Interview Session');
@@ -116,6 +124,14 @@ function appendDIV(event) {
     div.focus();
     document.getElementById('input-text-chat').focus();
 }
-
+function myFunction() {
+    var txt;
+    var r = confirm("Apakah anda ingin mengakhiri sesi interview?");
+    if (r == true) {
+        window.location.href = "home";
+    } else {
+        
+    }
+}
 </script>
 @endsection
