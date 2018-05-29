@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title')</title>
     @include ('layouts.head')
+    @yield('script')
     @yield('styles')
 </head>
 <body>
