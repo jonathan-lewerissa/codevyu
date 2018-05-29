@@ -17,3 +17,4 @@
 <script src="{{ asset('js/semantic.min.js') }}"></script>
 
 <script type="text/javascript" src="/assets/semantic-ui/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style1.css') }}">
