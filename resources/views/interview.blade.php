@@ -23,7 +23,7 @@
 
 <div class="ui centered" style="text-align: center;">
 	<div class="ui action input focus">
-		<input id="txt-roomid" placeholder="Unique Room ID" type="text">
+		<input id="room_id" placeholder="Unique Room ID" type="text">
 		<div class="ui action input">
 			<button id="join-room" class="ui button">Join Room</button>
 		</div>
@@ -79,7 +79,7 @@
 		OfferToReceiveVideo : true
 	};
 
-	var roomid = document.getElementById('txt-roomid');
+	var roomid = document.getElementById('room_id');
 
 	roomid.value = connection.token();
 
