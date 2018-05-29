@@ -16,7 +16,7 @@ class CreateInterestsTable extends Migration
         Schema::create('interests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('file_path')->nullable();
             $table->unsignedInteger('opening_id');
             $table->timestamps();

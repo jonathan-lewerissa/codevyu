@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Appointment;
 use App\Interest;
+use App\Interview;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
 
 class AppointmentController extends Controller
 {
@@ -46,13 +48,22 @@ class AppointmentController extends Controller
 //        );
 
         $store = new Appointment();
-        $interest_id = $request->interest_id;
-        $store->interest_id = $interest_id;
-        $store->opening_id = Interest::find($interest_id)->opening->id;
-        $store->user_id = Interest::find($interest_id)->opening->user->id;
+        $interest = Interest::find($request->interest_id);
+        $store->interest_id = $request->interest_id;
+        $store->opening_id = $interest->opening->id;
+        $store->user_id = $interest->opening->user->id;
         $store->schedule = Carbon::parse($request->date.' '.$request->time);
         $store->save();
 
+        $interview = new Interview();
+        $interview->appointment_id = $interest->appointment->id;
+        $interview->room_id = str_random(10);
+        $interview->save();
+
+        $position = $interest->opening->title;
+        $time = Carbon::parse($request->date.' '.$request->time);
+
+//        Mail::to($request->email)->send('appointment_mail',compact('position','time',))
 //        Jangan lupa buat kirim email!
         return back();
     }
