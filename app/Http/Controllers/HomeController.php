@@ -29,7 +29,8 @@ class HomeController extends Controller
     {
         $current_user = Auth::user()->id;
         $appointments = Appointment::where([
-            ['user_id','=',$current_user]
+            ['user_id','=',$current_user],
+            ['status','=',false]
         ])->get();
         return view('home',compact('appointments'));
     }

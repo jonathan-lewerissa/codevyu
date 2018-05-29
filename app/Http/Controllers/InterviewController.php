@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Interview;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class InterviewController extends Controller
@@ -57,6 +58,12 @@ class InterviewController extends Controller
      */
     public function show($id)
     {
+        $time = Carbon::parse(Interview::where('room_id',$id)->first()->appointment->schedule);
+        $diff = $time->diffInMinutes(Carbon::now());
+        if($diff <= 5 && $diff >= -5){
+            Interview::where('room_id',$id)->update(['status'=>true]);
+            return view('interview',compact('id'));
+        }
         return view('interview',compact('id'));
     }
 

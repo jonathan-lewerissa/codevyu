@@ -40,7 +40,7 @@ class InterestController extends Controller
     public function store(Request $request)
     {
         Interest::create($request->all());
-        return redirect()->route('get-started.index');
+        return redirect()->route('welcome');
     }
 
     /**

@@ -14,12 +14,11 @@
 Auth::routes();
 
 Route::get('/', function () {
+    if(Auth::check()) {
+        return redirect()->route('home');
+    }
     return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+})->name('welcome');
 
 Route::get('/interview/{id}', 'InterviewController@show')->name('interview_id');
 
@@ -33,9 +32,3 @@ Route::resource('/opening','OpeningController',
 Route::resource('/appointment','AppointmentController');
 
 Route::resource('/get-started','InterestController');
-
-//Route::get('/send', function (){
-//   $email = "veaca13@gmail.com";
-//   \Illuminate\Support\Facades\Mail::to($email)->send(new \App\Mail\AppointmentMail());
-//   return view('home');
-//});

@@ -15,11 +15,11 @@
                 {{ csrf_field() }}
                 <div class="field">
                     <label>Full name</label>
-                    <input type="text" placeholder="Your name" name="name">
+                    <input type="text" placeholder="Your name" name="name" required>
                 </div>
                 <div class="field">
                     <label>Email</label>
-                    <input type="email" placeholder="Your email" name="email">
+                    <input type="email" placeholder="Your email" name="email" required>
                     @if ($errors->has('email'))
                         <span class="help-block">
                     <strong>{{ $errors->first('email') }}</strong>
