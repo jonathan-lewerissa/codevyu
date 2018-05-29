@@ -14,7 +14,7 @@
                         <div class="ui segment">
                             <h3 class="ui header">{{ $opening->title }}</h3>
                             <p>{{ $opening->description }}</p>
-                            <form action="/opening/{{ $opening->id }}">
+                            <form action="{{ route('opening.show',['id'=>$opening->id]) }}">
                                 <button class="ui positive button" type="submit">View details</button>
                             </form>
                         </div>

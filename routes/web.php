@@ -33,9 +33,11 @@ Route::get('/appoint', function(){
 	return view('appoint');
 });
 
-Route::get('/opening','OpeningController@index');
-
-Route::get('/opening/{id}','OpeningController@show');
+Route::resource('/opening','OpeningController',
+    [
+        'names' => ['index' => 'opening.index','show'=>'opening.show'],
+        'parameters' => ['user' => 'id']
+    ]);
 
 Route::resource('/get-started','InterestController')->only(['create']);
 

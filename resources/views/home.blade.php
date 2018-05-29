@@ -23,6 +23,10 @@
             <button class="ui button" onclick="location.href='appoint'">
                 Make an Appointment
             </button>
+            <form action="{{ route('opening.index') }}" method="get">
+                {{ csrf_field() }}
+                <button type="submit" class="ui button">View Openings</button>
+            </form>
         </div>
     </div>
 </div>

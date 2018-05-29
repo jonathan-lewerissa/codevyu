@@ -48,9 +48,9 @@ class OpeningController extends Controller
      * @param  \App\Opening  $opening
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Opening $opening)
     {
-        $all = Opening::find($id)->interest;
+        $all = Opening::find($opening->id)->interest;
         return view('list2',compact('all'));
     }
 
