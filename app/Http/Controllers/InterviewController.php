@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class InterviewController extends Controller
 {
-     $role;
     /**
      * Display a listing of the resource.
      *
@@ -15,16 +14,7 @@ class InterviewController extends Controller
      */
     public function index()
     {
-        //
-       
 
-        $interview = Interview::all();
-        if ($role == 1){
-            return view('admin.interview.index', compact('interview'));    
-        }
-        else {
-            return view('user.interview.index', compact('interview'));
-        }
     }
 
     /**
@@ -67,15 +57,7 @@ class InterviewController extends Controller
      */
     public function show($id)
     {
-        //
-        if ($role == 1){
-            $interview = Interview::where('id', $id)->first();
-            return view ('admin.interview.show',compact('interview'));
-        }
-        else {
-            $interview = Interview::where('id', $id)->first();
-            return view('user.interview.show', compact('interview'));
-        }
+        return view('interview',compact('id'));
     }
 
     /**

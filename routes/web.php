@@ -21,13 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/interview', function(){
-	return view('interview');
-});
-
-Route::get('/appoint', function(){
-	return view('appoint');
-});
+Route::get('/interview/{id}', 'InterviewController@show')->name('interview_id');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -40,8 +34,8 @@ Route::resource('/appointment','AppointmentController');
 
 Route::resource('/get-started','InterestController');
 
-Route::get('/send', function (){
-   $email = "veaca13@gmail.com";
-   \Illuminate\Support\Facades\Mail::to($email)->send(new \App\Mail\AppointmentMail());
-   return view('home');
-});
+//Route::get('/send', function (){
+//   $email = "veaca13@gmail.com";
+//   \Illuminate\Support\Facades\Mail::to($email)->send(new \App\Mail\AppointmentMail());
+//   return view('home');
+//});

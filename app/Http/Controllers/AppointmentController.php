@@ -57,7 +57,7 @@ class AppointmentController extends Controller
 
         $interview = new Interview();
         $interview->appointment_id = $interest->appointment->id;
-        $interview->room_id = str_random(10);
+        $interview->room_id = str_random(16);
         $interview->save();
 
         $position = $interest->opening->title;

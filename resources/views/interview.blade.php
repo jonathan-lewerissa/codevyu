@@ -23,9 +23,9 @@
 
 <div class="ui centered" style="text-align: center;">
 	<div class="ui action input focus">
-		<input id="room_id" placeholder="Unique Room ID" type="text">
+		<input id="room_id" placeholder="Unique Room ID" type="text" readonly hidden value="{{ $id }}">
 		<div class="ui action input">
-			<button id="join-room" class="ui button">Join Room</button>
+			<button id="join-room" class="ui button">Enter interview now!</button>
 		</div>
 	</div>
 </div>
@@ -80,8 +80,6 @@
 	};
 
 	var roomid = document.getElementById('room_id');
-
-	roomid.value = connection.token();
 
 	document.getElementById('join-room').onclick = function() {
 		this.disabled = true;

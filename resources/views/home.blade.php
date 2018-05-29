@@ -28,6 +28,7 @@
                                 <h2 class="ui header">{{ $appointment->interest->name  }}</h2>
                                 <p>applied for: {{ $appointment->opening->title }}</p>
                                 <p>Interview on: {{ \Carbon\Carbon::parse($appointment->schedule)->format('l jS \\of F Y h:i:s A') }}</p>
+                                <a href="{{ route('interview_id',['id'=>$appointment->interview->room_id]) }}" class="ui positive button">Interview now</a>
                             </div>
                         @endforeach
                     </div>
