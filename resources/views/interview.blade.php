@@ -35,7 +35,7 @@
 	</div>
 </div>
 <div class="ui centered" style="text-align: center;">
-	<button class="ui right labeled icon button" id="next" disabled="true">
+	<button class="ui right labeled icon button" id="next" disabled="true" onclick="myFunction()">
 	  <i class="right arrow icon"> </i>
 	  Next Session
 	</button>
@@ -126,6 +126,14 @@ function appendDIV(event) {
     div.focus();
     document.getElementById('input-text-chat').focus();
 }
-
+function myFunction() {
+    var txt;
+    var r = confirm("Apakah anda ingin mengakhiri sesi interview?");
+    if (r == true) {
+        window.location.href = "home";
+    } else {
+        
+    }
+}
 </script>
 @endsection
