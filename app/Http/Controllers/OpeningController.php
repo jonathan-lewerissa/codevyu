@@ -87,6 +87,8 @@ class OpeningController extends Controller
      */
     public function destroy(Opening $opening)
     {
-        //
+        $r = Opening::findorfail($opening->id);
+        $r->delete();
+        return redirect()->route('opening.index');
     }
 }

@@ -15,7 +15,12 @@
                             <h3 class="ui header">{{ $opening->title }}</h3>
                             <p>{{ $opening->description }}</p>
                             <form action="{{ route('opening.show',['id'=>$opening->id]) }}">
-                                <button class="ui positive button" type="submit">View details</button>
+                                <button class="ui positive button" type="submit">Who is interested?</button>
+                            </form>
+                            <form action="{{ route('opening.destroy',['id'=>$opening->id]) }}" method="post">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button class="ui negative button" type="submit">Delete opening</button>
                             </form>
                         </div>
                         @endforeach
