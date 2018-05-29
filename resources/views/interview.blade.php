@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+@extends('layouts.master')
+
+	@section('title')
+
+	@endsection
+	@section('script')
 	<script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
 <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
 <style type="text/css">
@@ -10,14 +12,50 @@
 		border-radius: 15px;
 	}
 </style>
+@endsection
 
-</head>
-<body>
 
-<input id="txt-roomid" placeholder="Unique Room ID">
+@section('content')
 
-<button id="join-room">Join Room</button>
-<input type="text" id="input-text-chat" placeholder="Enter Text Chat" >
+<h1 class="ui header centered">Welcome to the interview session</h1>
+<p class="ui centered">Disini anda akan memulai sesi interview, dimohon untuk memasukan room-id lalu tekan join untuk masuk dalam room tersebut.</p>
+<p>Setelah anda menekan tombol join, maka akan muncul notifikasi untuk microphone beserta camera lalu silahkan anda memberikan izin terhadap akses tersebut.</p>
+
+<div class="ui centered">
+	<div class="ui action input focus">
+		<input id="txt-roomid" placeholder="Unique Room ID" type="text">
+		<div class="ui action input">
+			<button id="join-room" class="ui button">Join Room</button>
+		</div>
+	</div>
+	<div class="ui input focus">
+	  	 <input  id="input-text-chat" placeholder="Enter Text Chat" type="text">
+	</div>
+</div>
+
+
+<!-- <div class="ui two column centered grid">
+   <div class="four column centered row">
+    <div class="column">
+    	<div class="ui action input focus">
+			  <input id="txt-roomid" placeholder="Unique Room ID" type="text">
+			</div>
+    </div>
+    <div class="column">
+    	<div class="ui action input">
+			  <button id="join-room" class="ui button">Join Room</button>
+			</div>
+    </div>
+  </div>
+  <div class="column">
+  	<div class="ui input focus">
+  	 <input  id="input-text-chat" placeholder="Enter Text Chat" type="text">
+  	 </div>
+  </div>
+</div> -->
+
+
+
 <div id="chat-container">
 
                 <div id="file-container"></div>
@@ -74,6 +112,6 @@ function appendDIV(event) {
     div.focus();
     document.getElementById('input-text-chat').focus();
 }
+
 </script>
-</body>
-</html>
+@endsection
