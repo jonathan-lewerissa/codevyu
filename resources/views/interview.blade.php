@@ -128,7 +128,7 @@ function myFunction() {
     var txt;
     var r = confirm("Apakah anda ingin mengakhiri sesi interview?");
     if (r == true) {
-        window.location.href = "home";
+        window.location.href = "{{ route('get-started.index') }}";
     } else {
         
     }

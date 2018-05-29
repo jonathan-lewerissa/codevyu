@@ -6,6 +6,7 @@ use App\Appointment;
 use App\Interest;
 use App\Interview;
 use Carbon\Carbon;
+use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
@@ -58,13 +59,23 @@ class AppointmentController extends Controller
         $interview = new Interview();
         $interview->appointment_id = $interest->appointment->id;
         $interview->room_id = str_random(16);
+        $room_id = $interview->room_id;
         $interview->save();
 
         $position = $interest->opening->title;
         $time = Carbon::parse($request->date.' '.$request->time);
 
-//        Mail::to($request->email)->send('appointment_mail',compact('position','time',))
-//        Jangan lupa buat kirim email!
+        $data = array('position'=>$position,'time'=>$time,'room_id'=>$room_id);
+
+        $mail_to = $request->email;
+        $mail_name = $request->name;
+
+        Mail::send('email.appointment_mail',$data,function ($message) use ($mail_to,$mail_name)
+        {
+           $message->to($mail_to,$mail_name)->subject('Call to interview');
+           $message->from('noreply-codevyu@jonathanrl.com','Codevyu');
+        });
+
         return back();
     }
 

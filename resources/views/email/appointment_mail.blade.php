@@ -11,8 +11,9 @@
 <br>
 <p>The time for the online interview is {{ $time }}</p>
 <br>
-<p>The link for the online interview is <a>{{  }}</a>.</p>
-<p>May the best of luck be with you</p>
+<p>The link for the online interview is <a href="{{ route('interview_id',['id'=>$room_id]) }}">{{ route('interview_id',['id'=>$room_id]) }}</a>.</p>
+<br>
+<p>May the best of luck be with you always!</p>
 </body>
 
 </html>
