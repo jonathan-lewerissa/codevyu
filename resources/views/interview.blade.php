@@ -17,9 +17,9 @@
 
 @section('content')
 
-<h1 class="ui header centered">Welcome to the interview session</h1>
-<p class="ui centered">Disini anda akan memulai sesi interview, dimohon untuk memasukan room-id lalu tekan join untuk masuk dalam room tersebut.</p>
-<p>Setelah anda menekan tombol join, maka akan muncul notifikasi untuk microphone beserta camera lalu silahkan anda memberikan izin terhadap akses tersebut.</p>
+<h1 class="ui header centered" id="head">Welcome to the interview session</h1>
+<p class="ui centered" id="paragrap">Disini anda akan memulai sesi interview, dimohon untuk memasukan room-id lalu tekan join untuk masuk dalam room tersebut.</p>
+<p id="paragrap2">Setelah anda menekan tombol join, maka akan muncul notifikasi untuk microphone beserta camera lalu silahkan anda memberikan izin terhadap akses tersebut.</p>
 
 <div class="ui centered">
 	<div class="ui action input focus">
@@ -83,6 +83,9 @@
 	document.getElementById('join-room').onclick = function() {
 		this.disabled = true;
 		connection.openOrJoin(roomid.value || 'predefined-roomid');
+		document.getElementById('head').innerHTML ="Semoga Berhasil";
+		document.getElementById('paragrap').innerHTML = "Setelah anda selesai interview, dimohon untuk mengirimkan file yang telah dibuat ke email perusahaan";
+		document.getElementById('paragrap2').innerHTML ="";
 	};
 connection.onopen = function(event) {
     connection.send('Welcome to Interview Session');
