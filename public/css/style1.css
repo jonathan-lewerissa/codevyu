@@ -1,0 +1,14 @@
+.logoimg{
+	margin: 7px;
+	width: 150px;
+}
+
+.navbar-brand {
+	padding: none;
+}
+
+.navbar-brand .logoimg{
+	width: 120px;
+	margin: none;
+	padding: none;
+}

@@ -31,8 +31,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'CodeVyu') }}
+                    <link rel="stylesheet" type="text/css" href="{{ asset('css/style1.css') }}">
+                    <a class="logo" href="{{ url('/') }}">
+                        <img class="logoimg" src="{{ asset('images/logo-codevyu.png') }}">
                     </a>
                 </div>
 
