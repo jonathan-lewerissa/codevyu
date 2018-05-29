@@ -17,21 +17,24 @@
 
 @section('content')
 
-<h1 class="ui header centered">Welcome to the interview session</h1>
-<p class="ui centered">Disini anda akan memulai sesi interview, dimohon untuk memasukan room-id lalu tekan join untuk masuk dalam room tersebut.</p>
-<p>Setelah anda menekan tombol join, maka akan muncul notifikasi untuk microphone beserta camera lalu silahkan anda memberikan izin terhadap akses tersebut.</p>
+<h1 class="ui header centered" id="head" >Welcome to the interview session</h1>
+<p id="paragrap" style="text-align: center;">Disini anda akan memulai sesi interview, dimohon untuk memasukan room-id lalu tekan join untuk masuk dalam room tersebut.</p>
+<p id="paragrap2" style="text-align: center;">Setelah anda menekan tombol join, maka akan muncul notifikasi untuk microphone beserta camera lalu silahkan anda memberikan izin terhadap akses tersebut.</p>
 
-<div class="ui centered">
+<div class="ui centered" style="text-align: center;">
 	<div class="ui action input focus">
-		<input id="txt-roomid" placeholder="Unique Room ID" type="text">
+		<input id="room_id" placeholder="Unique Room ID" type="text">
 		<div class="ui action input">
 			<button id="join-room" class="ui button">Join Room</button>
 		</div>
 	</div>
-	<div class="ui input focus">
+</div>
+<div class="ui centered" style="text-align: center;">
+	<div class="ui input focus" >
 	  	 <input  id="input-text-chat" placeholder="Enter Text Chat" type="text">
 	</div>
 </div>
+
 
 
 <!-- <div class="ui two column centered grid">
@@ -76,13 +79,16 @@
 		OfferToReceiveVideo : true
 	};
 
-	var roomid = document.getElementById('txt-roomid');
+	var roomid = document.getElementById('room_id');
 
 	roomid.value = connection.token();
 
 	document.getElementById('join-room').onclick = function() {
 		this.disabled = true;
 		connection.openOrJoin(roomid.value || 'predefined-roomid');
+		document.getElementById('head').innerHTML ="Semoga Berhasil";
+		document.getElementById('paragrap').innerHTML = "Setelah anda selesai interview, dimohon untuk mengirimkan file yang telah dibuat ke email perusahaan";
+		document.getElementById('paragrap2').innerHTML ="";
 	};
 connection.onopen = function(event) {
     connection.send('Welcome to Interview Session');
