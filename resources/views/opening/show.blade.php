@@ -27,6 +27,8 @@
                                         <input type="time" name="time" required>
                                     </div>
                                     <input type="number" value="{{ $interest->id }}" name="interest_id" hidden readonly>
+                                    <input type="text" value="{{ $interest->name }}" name="name" hidden readonly>
+                                    <input type="text" value="{{ $interest->email }}" name="email" hidden readonly>
                                     <button class="ui positive button" type="submit">Make appointment</button>
                                 </form>
                             @else

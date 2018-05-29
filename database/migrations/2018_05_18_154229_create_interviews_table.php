@@ -14,7 +14,7 @@ class CreateInterviewsTable extends Migration
     public function up()
     {
         Schema::create('interviews', function (Blueprint $table) {
-//            $table->increments('id');
+            $table->increments('id');
             $table->string('room_id');
             $table->unsignedInteger('appointment_id');
             $table->timestamps();

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Interview extends Model
 {
     protected $fillable = [
-        'room_id'
+        'room_id','appointment_id'
     ];
 
     public function appointment()
