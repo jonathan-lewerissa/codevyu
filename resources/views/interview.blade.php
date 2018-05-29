@@ -18,7 +18,7 @@
 @section('content')
 
 <h1 class="ui header centered" id="head" >Welcome to the interview session</h1>
-<p id="paragrap" style="text-align: center;">Disini anda akan memulai sesi interview, dimohon untuk memasukan room-id lalu tekan join untuk masuk dalam room tersebut.</p>
+<p id="paragrap" style="text-align: center;">Disini anda akan memulai sesi interview, dimohon untuk menekan tombol join untuk masuk dalam room tersebut.</p>
 <p id="paragrap2" style="text-align: center;">Setelah anda menekan tombol join, maka akan muncul notifikasi untuk microphone beserta camera lalu silahkan anda memberikan izin terhadap akses tersebut.</p>
 
 <div class="ui centered" style="text-align: center;">
